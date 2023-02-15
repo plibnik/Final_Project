@@ -8,3 +8,5 @@ powerdb = mysql.connector.connect(
 )
 
 print(mydb) 
+
+# change string to test push to GitHub 
