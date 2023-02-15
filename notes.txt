@@ -14,3 +14,7 @@ test -> dev AUTO
 dev -> prod MANUAL?
 
 TEST <-> DEV
+
+================
+
+Running containers with --rm flag is good for those containers that you use for very short while just to accomplish something, e.g., compile your application inside a container, or just testing something that it works, and then you are know it's a short lived container and you tell your Docker daemon that once it's done running, erase everything related to it and save the disk space.

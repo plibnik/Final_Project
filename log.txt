@@ -1,0 +1,1 @@
+15.02.23 9:29	Added docker to run as service, "sudo systemctl enable --now docker"
