@@ -1,0 +1,56 @@
+Regression tests are just the beginning, however. Devops teams also automate performance, API, browser, and device testing. Today, teams can also embed static code analysis and security testing in the CI/CD pipeline for shift-left testing. Agile teams can also test interactions with third-party APIs, SaaS, and other systems outside of their control using service virtualization. The key is being able to trigger these tests through the command line, a webhook, or a web service, and get a success or failure response.
+
+
+https://www.infoworld.com/article/3516013/how-to-improve-cicd-with-shift-left-testing.html
+
+
+More complex and time-intensive tests such as end-to-end user experience tests, transaction testing, static code analysis, and security testing often run better outside of CI/CD pipelines and on daily or more frequent schedules. These tests still provide early feedback to developers on quality issues, but they are automated outside of CI/CD to avoid slowing or bottlenecking builds.
+
+
+A more sophisticated continuous delivery pipeline might have additional steps such as synchronizing data, archiving information resources, or patching applications and libraries.
+
+Once the development team has selected a CI/CD tool, it must ensure that all environment variables are configured outside the application. CI/CD tools allow development teams to set these variables, *****mask***** variables such as passwords and account keys, and configure them at the time of deployment for the target environment.
+
+=================
+
+
+You should be mindful that code on the release branch still needs to be tested, since when it was on trunk it may not have been tested in this particular state. If a mistake was made during the merge or if the code is dependent on code that lives on master but was not merged to release you could have problems.
+
+When using parallel release branches you should try to keep master and release as close to in sync as possible. The more divergent the code gets between the two branches the harder it will become to merge and the more likely it is that errors will occur. Frankly, if you find that the same piece of work can’t be released for several sprints in a row it may be a sign that the particular piece of work is either too large or that there is some other problem that needs to be addressed.
+
+You should be mindful that this also goes against some of the principles of continuous integration, since the code is only truly integrated in the state you plan to release when you merge with the release branch, which won’t happen every commit.
+
+If you can get away without using a parallel release branch, you shouldn’t use one. Doing all the work on master is likely to be more effective for small teams and is more aligned with the principles of continuous integration. However, parallel release branches are more scalable as more developers start working on the same codebase.
+
+==================
+
+
+podman - removed, docker compose -- installed
+
+==================
+
+blue/green or feature flags
+
+================
+
+
+Ansible -- 
+"serial 1"
+
+ + ansible.builtin.pause:
+	seconds: 30
+
+================
+
+docker rmi -f (кого) // to clean space
+"підчищати за собою на машині, яка с творює іміджі - це просто правило хорошого тону" (с) Михайло
+
+================
+
+якщо всі плагіни підключити, то Дженкінсу і 4 гігів може бути недостатньо (а так 2 вистачить)
+================
+
+
+1. Вебхук з гітхаба на Дженкінс
+2. Пайплайн.
+3. 
